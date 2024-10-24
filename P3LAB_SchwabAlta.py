@@ -18,54 +18,76 @@ print(7%4)
 # Get money value from the user
 money = float(input("Enter the amount of money as a float: $"))
 
-# Convert money to a whole number
-money = int(round(money * 100))
+# Considering if the user put in 0.00
+if money == 0:
+    print("No change")
 
-'''
-print(money)
-'''
+if money < 0:
+    print("oof, your in debt")
 
-# Calcutlate the amount of dollar in the money variable
-dollars = money // 100
-'''
-print(f"Dollars: {dollars}")
-'''
+# Check for debt
+if money > 0:
+    
 
-# Remove the dollars from the money variable
-money = money - (dollars * 100)
 
-# Calcutlate the amount of quarters in the money variable
-quarters = money // 25
-'''
-print(f"Quarters: {quarters}")
-'''
+    # Convert money to a whole number
+    money = round(money * 100)
 
-# Remove the quarters from the money variable
-money = money - (quarters * 25)
 
-# Calcutlate the amount of dimes in the money variable
-dimes = money // 10
-'''
-print(f"Dimes: {dimes}")
-'''
 
-# Remove the dimes from the money variable
-money = money - (dimes * 10)
+    '''
+    print(money)
+    '''
 
-# Calcutlate the amount of nickel in the money variable
-nickels = money // 5
-'''
-print(f"Nickels: {nickels}")
-'''
+    # Calcutlate the amount of dollar in the money variable
+    dollars = money // 100
+    '''
+    print(f"Dollars: {dollars}")
+    '''
 
-# Remove the nickels from the money variable
-money = money - (nickels * 5)
+    # Remove the dollars from the money variable
+    money = money - (dollars * 100)
 
-# Create a variable for pennies
-pennies = money
-'''
-print(f"Pennies: {pennies}")
-'''
+    # Calcutlate the amount of quarters in the money variable
+    quarters = money // 25
+    '''
+    print(f"Quarters: {quarters}")
+    '''
+
+    # Remove the quarters from the money variable
+    money = money - (quarters * 25)
+
+    # Calcutlate the amount of dimes in the money variable
+    dimes = money // 10
+    '''
+    print(f"Dimes: {dimes}")
+    '''
+
+    # Remove the dimes from the money variable
+    money = money - (dimes * 10)
+
+    # Calcutlate the amount of nickel in the money variable
+    nickels = money // 5
+    '''
+    print(f"Nickels: {nickels}")
+    '''
+
+    # Remove the nickels from the money variable
+    money = money - (nickels * 5)
+
+    # Create a variable for pennies
+    pennies = money
+    '''
+    print(f"Pennies: {pennies}")
+    '''
+else:
+    dollars = 0
+    quarters = 0
+    dimes = 0
+    nickels = 0
+    pennies = 0
+
+
 
 # Print dollar amount gramatically correct
 if dollars > 0:
@@ -101,3 +123,11 @@ if pennies > 0:
         print(f"{pennies} Penny")
     else:# variable is greater than one
         print(f"{pennies} Pennies")
+
+
+
+
+
+
+
+        
