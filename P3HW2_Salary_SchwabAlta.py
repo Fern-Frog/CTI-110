@@ -35,3 +35,45 @@ Display gross pay (OT pay + reg pay)
 
 '''
 
+# Get the input from the user
+name = input("Enter employee's name: ")
+
+total_hours = int(input("Enter number of hours worked: "))
+
+pay_rate = float( input ("Enter employee's pay rate: "))
+
+print()
+
+# The if else with the cal.
+
+if total_hours > 40:
+    OT_hours = total_hours - 40
+    OT_pay = OT_hours * (pay_rate * 1.5)
+    reg_pay = 40 * pay_rate
+    gross_pay = OT_pay + reg_pay
+else: # employee work 40 or less hours
+    OT_hours = 0
+    OT_pay = 0
+    reg_pay = total_hours * pay_rate
+    gross_pay = reg_pay
+    
+
+print("--"*20)
+# display name 
+print(f"Employee name: {name}\n")
+
+
+
+# display tiles
+print(f"{'Hours Worked':<15} {'Pay Rate':<15} {'OverTime':<15} {'OverTime Pay':<15} {'RegHour Pay':<15} {'Gross Pay':<15}")
+print("--"*50)
+
+# display numbers
+print(f"{total_hours:<15} {pay_rate:<15} {OT_hours:<15} ${OT_pay:<15.2f} ${reg_pay:<15.2f} ${gross_pay:<15.2f}")
+
+
+    
+    
+
+
+
