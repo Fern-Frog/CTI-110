@@ -5,7 +5,7 @@
 
 
 # import libarys
-import clrprint
+from clrprint import *
 
 
 # character create function
@@ -24,33 +24,38 @@ def create_character():
 
     return character
 
-# display character code
 def display_character(character):
-    for key, value in character.items():
-        if key == "health":
-            health_value = int(value)
-            # Determine health color
-            if health_value <= 20:
-                clrprint.clrit(f"{key.capitalize()}: {value}", color="red")
-            elif 21 <= health_value <= 50:
-                clrprint.clrit(f"{key.capitalize()}: {value}", color="yellow")
-            else:
-                clrprint.clrit(f"{key.capitalize()}: {value}", color="green")
-        else:
-            print(f"{key.capitalize()}: {value}")
+    #Display character information with color-coded health based on its value.
 
-
+    # Extract values from the dictionary
+    name = character.get("name", "Unknown")
+    health = int(character.get("health", 0))
+    mana = int(character.get("mana", 0))
+    
+    # Determine health color
+    if health > 50:
+        health_color = "green"
+    elif 21 <= health <= 50:
+        health_color = "yellow"
+    else:  # health <= 20
+        health_color = "red"
+    
+    # Display character info
+    clrprint(f"Name: {name}", clr="white")
+    clrprint(f"Health: {health}", clr=health_color)
+    clrprint(f"Mana: {mana}", clr="blue")
 
 # the main boy
 def main():
     print("Game is starting....")
     print()
     char1 = create_character()
-    #char2 = create_character()
+    print("---"*7)
+    char2 = create_character()
     print()
     display_character(char1)
     print()
-   # display_character(char2)
+    display_character(char2)
     print()
    
 
@@ -58,3 +63,5 @@ def main():
     
 if __name__ == "__main__":
     main()
+
+
