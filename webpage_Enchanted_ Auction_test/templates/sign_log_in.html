@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enchanted Auctions sign up/ log in</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            max-width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+		.Header {
+			border: 5px outset #562c78;
+			background-color: #8c40c9;
+			display: flex;  
+			align-items: center;  
+			padding: 10px;  
+			width: 100%;  /* Ensure full width */
+		}
+		.Header img:first-child {  /* Logo image */
+			width: 200px;  /* Fixed width for logo */
+			height: auto;  /* Maintain aspect ratio */
+			margin-right: 0px;  /* Space between images */
+			object-fit: contain;  /* Ensure image fits */
+		}
+		.Header img:last-child {  /* Logo text image */
+			flex-grow: 1;  /* Take up remaining space */
+			max-height: 150px;  /* Maximum height */
+			width: auto;  /* Adjust width proportionally */
+			object-fit: contain;  /* Maintain aspect ratio */
+		}
+		    .dropdown {
+        position: relative;
+        display: inline-block;
+		}
+
+		/* Dropdown content (hidden by default) */
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+
+		/* Show dropdown on hover */
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		/* Style dropdown links */
+		.dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+		}
+
+		/* Change color on hover */
+		.dropdown-content a:hover {
+			background-color: #f1f1f1;
+		}
+ 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .footer {
+            background-color: #562c78;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script src=""></script>
+</head>
+<body style="background-color:#dfceed;">
+    <div class="container">
+        <div class="Header">
+            <img src="logo.png" alt="logo">
+            <img src="logo_text.png" alt="logo">
+        </div>
+        
+        <nav>
+             <a href="index.html">Home</a>
+			<div class="dropdown">
+				<a href="#">Regions</a>
+				<div class="dropdown-content">
+					<a href="index.html">Acharia</a>
+					<a href="index.html">Bloisia</a>
+					<a href="index.html">Cepraunia</a>
+					<a href="index.html">Eglad</a>
+					<a href="index.html">Tufrasal</a>
+					<a href="index.html">Uscein</a>
+				</div>
+			</div>
+			<a href="index.html">Explore Relics</a>
+			<a href="index.html">How It Works</a>
+			<a href="index.html">About Us</a>
+			<a href="index.html">Contact</a>
+			<a href="sign_log_in.html">Sign Up/ Log In</a>
+        </nav>
+        
+        <div class="main-content">
+            <h1>Make form here and if time to python code here (if else stuff)</h1>
+           
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
