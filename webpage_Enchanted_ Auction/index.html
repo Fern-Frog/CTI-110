@@ -1,40 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-.Header {
-	border: 5px outset #562c78;
-  background-color: #8c40c9;
-  text-align: center;
-}
-</style>
-<script src=""></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            max-width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+		.Header {
+			border: 5px outset #562c78;
+			background-color: #8c40c9;
+			display: flex;  
+			align-items: center;  
+			padding: 10px;  
+			width: 100%;  /* Ensure full width */
+		}
+		.Header img:first-child {  /* Logo image */
+			width: 200px;  /* Fixed width for logo */
+			height: auto;  /* Maintain aspect ratio */
+			margin-right: 10px;  /* Space between images */
+			object-fit: contain;  /* Ensure image fits */
+		}
+		.Header img:last-child {  /* Logo text image */
+			flex-grow: 1;  /* Take up remaining space */
+			max-height: 150px;  /* Maximum height */
+			width: auto;  /* Adjust width proportionally */
+			object-fit: contain;  /* Maintain aspect ratio */
+		}
+ 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .footer {
+            background-color: #562c78;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script src=""></script>
+</head>
 <body style="background-color:#dfceed;">
-
-<div class="Header">
-<img src="header_temp2.jpg" alt="header" style="width:1900px;height:250px; ">
-</div>
-<br>
-<nav>
-<center> 
-<a href="index.html">Home</a> &nbsp; &nbsp;
-<a href="index.html"><img src="Acharia_nav_temp.jpg" alt="Acharia" style="width:80px;height:80px;"></a> &nbsp; &nbsp;
-<a href="index.html"><img src="Bloisia.jpg" alt="Bloisia" style="width:80px;height:80px;"></a> &nbsp; &nbsp;
-<a href="index.html"><img src="Cepraunia_nav_temp.jpg" alt="Cepraunia" style="width:80px;height:80px;"></a> &nbsp; &nbsp;
-<a href="index.html">Eglad</a> &nbsp; &nbsp;
-<a href="index.html">Tufrasal</a> &nbsp; &nbsp;
-<a href="index.html">Uscein</a> &nbsp; &nbsp;
-</center> 
-</nav>
-
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
-</div>
-
+    <div class="container">
+        <div class="Header">
+            <img src="logo.png" alt="logo">
+            <img src="logo_text.png" alt="logo">
+        </div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html"><img src="Acharia_nav_temp.jpg" alt="Acharia" style="width:80px;height:80px;"></a>
+            <a href="index.html"><img src="Bloisia.jpg" alt="Bloisia" style="width:80px;height:80px;"></a>
+            <a href="index.html"><img src="Cepraunia_nav_temp.jpg" alt="Cepraunia" style="width:80px;height:80px;"></a>
+            <a href="index.html">Eglad</a>
+            <a href="index.html">Tufrasal</a>
+            <a href="index.html">Uscein</a>
+        </nav>
+        
+        <div class="main-content">
+            <h1>This is a Heading</h1>
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        </div>
+    </div>
 </body>
 </html>
