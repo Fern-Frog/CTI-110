@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enchanted Auctions Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+         html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            max-width: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #dfceed;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #8c40c9;
+            border-bottom: 5px outset #562c78;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+			background-color: transparent;
+        }
+        .nav-menu a {
+            display: inline-block;
+			margin: 0 15px;
+			text-decoration: none;
+			color: white;
+			transition: color 0.3s ease;
+        }
+          .nav-menu .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Trigger */
+    .nav-menu .dropdown > a {
+        cursor: pointer;
+        position: relative;
+    }
+
+    /* Dropdown Content */
+    .nav-menu .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1000;
+        top: 100%;
+        left: 0;
+        border-radius: 5px;
+    }
+
+    /* Show dropdown on hover */
+    .nav-menu .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Dropdown Links */
+    .nav-menu .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        margin: 0;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover Effect for Dropdown Links */
+    .nav-menu .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+		
+        .cta-button {
+            background-color: #ffd700;
+            color: #562c78;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+		.region-header {
+            max-width: 600px;  /* Limit image width */
+            max-height: 400px;  /* Limit image height */
+            object-fit: cover;  /* Crop image to fit while maintaining aspect ratio */
+            margin-top: 10px;  /* Add some space above the image */
+        }
+
+        
+        .region-description {
+            max-width: 800px;  /* Limit text width for readability */
+            margin: 20px auto;  /* Center the text */
+            text-align: center;
+            line-height: 1.6;  /* Improve readability */
+        }
+		.relics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+			column-gap: 30px;
+        }
+        .relic-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .relic-card:hover {
+            transform: scale(1.05);
+        }
+        .relic-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .relic-info {
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        .relic-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .relic-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .relic-bid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bid-price {
+            color: #562c78;
+            font-weight: bold;
+        }
+        .bid-button {
+            background-color: #8c40c9;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .bid-button:hover {
+            background-color: #562c78;
+        }
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a { 
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+		/* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: url('hero-background.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-content {
+            background: rgba(86, 44, 120, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+			font-family: Helvetica;
+			line-height:25px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero-buttons {
+            margin-top: 30px;
+        }
+        .hero-buttons a {
+            margin: 0 15px;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .explore-button {
+            background-color: #ffd700;
+            color: #562c78;
+        }
+        .learn-button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* Sections Styling */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            color: #562c78;
+            margin-bottom: 30px;
+        }
+        .footer {
+            background-color: #562c78;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+    <script src=""></script>
+</head>
+<body style="background-color:#dfceed;">
+    <div class="container">
+        <header class="header">
+            <img src="logo.png" alt="Enchanted Auctions Logo" class="logo">
+			<img src="logo_text _2.png" alt="Enchanted Auctions Logo" width: 150px height: auto >
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                 <div class="dropdown">
+					<a href="#">Regions</a>
+					<div class="dropdown-content">
+						<a href="Acharia_main.html">Acharia</a>
+						<a href="Bloisia_main.html">Bloisia</a>
+						<a href="Cepraunia_main.html">Cepraunia</a>
+						<a href="Eglad_main.html">Eglad</a>
+						<a href="Tufrasal_main.html">Tufrasal</a>
+						<a href="Uscein_main.html">Uscein</a>
+					</div>
+				</div>
+                <a href="#explore">Explore Relics</a>
+                <a href="#howitworks">How It Works</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#signup" class="cta-button">Start Bidding</a>
+            </nav>
+        </header>
+        
+         <div class="main-content">
+		 <center>
+            <h1 class="region-title"></h1>
+          
+
+            <img src="Bloisia_main_images.jpg" alt="Bloisia image" class="region-header">
+			 <div class="region-description">
+                <p>"Bloisia’s rolling hills and enchanting meadows are rich with tales of romance and heroism. Relics from this region often symbolize love, courage, and fateful encounters."</p>
+		</center>		
+            </div>
+		
+			<h2 style="text-align: center; color: #562c78; margin-top: 30px;">Bloisia Relics</h2>
+            <div class="relics-grid">
+                <div class="relic-card">
+                    <img src="ancient_druidic_staff.jpg" alt="Ancient Druidic Staff">
+                    <div class="relic-info">
+                        <div class="relic-name">Ancient Druidic Staff</div>
+                        <div class="relic-description">A mystical staff carved from the heart of an ancient forest, said to channel the raw power of nature.</div>
+                        <div class="relic-bid">
+                            <span class="bid-price">Current Bid: $5,750</span>
+                            <button class="bid-button">Bid Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relic-card">
+                    <img src="relic2.jpg" alt="Moonstone of the Forest Guardians">
+                    <div class="relic-info">
+                        <div class="relic-name">Moonstone of the Forest Guardians</div>
+                        <div class="relic-description">A luminescent stone that glows with an ethereal light, believed to be a communication artifact of forest spirits.</div>
+                        <div class="relic-bid">
+                            <span class="bid-price">Current Bid: $8,230</span>
+                            <button class="bid-button">Bid Now</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="relic-card">
+                    <img src="relic3.jpg" alt="Woodland Runic Tome">
+                    <div class="relic-info">
+                        <div class="relic-name">Woodland Runic Tome</div>
+                        <div class="relic-description">An ancient book bound in bark and inscribed with forgotten druidic runes, containing lost magical knowledge.</div>
+                        <div class="relic-bid">
+                            <span class="bid-price">Current Bid: $12,500</span>
+                            <button class="bid-button">Bid Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relic-card">
+                    <img src="relic4.jpg" alt="Elder Tree Root Amulet">
+                    <div class="relic-info">
+                        <div class="relic-name">Elder Tree Root Amulet</div>
+                        <div class="relic-description">An intricate amulet carved from the root of an elder tree, said to grant protection and wisdom to its wearer.</div>
+                        <div class="relic-bid">
+                            <span class="bid-price">Current Bid: $6,780</span>
+                            <button class="bid-button">Bid Now</button>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+			 <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About these lands</h1>
+                <p>"Bloisia is a land of unassuming beauty that belies its deep magical resonance. Stretching from rolling hills to shimmering rivers, it is a place where every blade of grass and every petal seems to hum with life. The skies above Bloisia often shift with the moods of the land; sunsets glow with unearthly colors, and starlit nights seem closer to the heavens than anywhere else in Loreveil.
+				<br>
+				The people of Bloisia are known for their artistry and celebration of life’s fleeting moments. Music, poetry, and dance are integral parts of their culture, reflecting their belief that joy and sorrow are two sides of the same coin. Many of Loreveil’s most enduring tales of heroism and love have their origins here, as Bloisia has long been a meeting point for fateful encounters and quests of destiny.
+				<br>
+				Bloisia’s landscapes are dotted with ruins of ancient amphitheaters and forgotten temples, silent witnesses to the many lives that have played out here. Even the land itself seems to remember, for the winds carry whispers of old ballads, and the rivers sometimes murmur secrets from ages past. While Bloisia lacks the imposing wilderness of Acharia or the grandeur of Eglad, it captivates through its quiet strength and enduring sense of hope. It is a region that teaches Loreveil to value connection, courage, and the beauty of a single moment frozen in time."</p>
+                
+            </div>
+        </section>
+        </div>
+        
+         <footer class="footer">
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#faq">FAQ</a>
+                <a href="#terms">Terms & Conditions</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <!-- Social media icons would go here -->
+            </div>
+            <p>&copy; 2024 Enchanted Auctions. Where Legends Become Yours.</p>
+        </footer>
+    </div>
+</body>
+</html>
